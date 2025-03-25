@@ -1,0 +1,72 @@
+/* 戻るボタン（bootstrap導入後） ======================================================================================== */
+.back_btn {
+    width: 20%;
+    margin-left: 1%;
+    vertical-align: middle;
+    color: #000;
+}
+
+.browser_back_area a
+{
+  color: #000;
+}
+.browser_back_area span
+{
+  vertical-align: -2px;
+  font-size: 18px;
+}
+.browser_back_area p
+{
+  font-size: 14px;
+}
+
+/* 期間入力部分 ============================================================================================== */
+.box
+{
+    width: 50%;
+    margin: 5% auto;
+    padding: 2%;
+    background-color: #9BD3B4;
+    border-radius: 25px;
+}
+
+.subBox
+{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.start, .end
+{
+    margin: 20px auto;
+    font-size: 30px;
+}
+
+.start_date, .end_date
+{
+    height: 50px;
+    font-size: 30px;
+    background-color: white!important; /* 背景色を白に設定 */
+    cursor: default!important; /* カーソルをデフォルトの矢印に設定 */
+}
+
+.datepicker
+{
+    font-size: 14px;
+}
+
+.error
+{
+    color: red;
+    font-size: 16px;
+}
+
+.submit_btn
+{
+    width: 100%;
+    margin: 20px auto;
+    font-size: 25px;
+    background-color: #48B373;
+    color: #fff;
+    /* border: 5px solid #5B9BD5; */
+}

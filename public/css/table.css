@@ -1,0 +1,723 @@
+/* colspan, rowspan使用時の親以外に使用 =============================================================*/
+.invisibleCell
+{
+    border-bottom: none!important;
+    border-right: 1px solid var(--border-color, silver)!important;
+    display: none;
+}
+
+/* 指定 ============================================================================================*/
+:root 
+{
+    --font-size: 12pt;
+    --border-color: #000;
+    --cell-fg: #000;
+    --cell-bg: #fff;
+    /* --header-bg: #f5f5f5; */
+    --header-bg: #fff;
+    --header-fg: #090909;
+    --header-border-color: #000;
+
+    --selected-cell-fg: #fff;
+    --selected-cell-bg: cyan;
+    --input-border-color: blue;
+}
+span
+{
+    font-size: 12px;
+}
+
+/* ボタンの並び ======================================================================================== */
+/* .row
+{
+    height: 60px;
+} */
+
+/* 戻るボタン ======================================================================================== */
+.back_btn 
+{
+    width: 20%;
+    margin-left: 1%;
+    vertical-align: middle;
+    color: #000;
+}
+
+.browser_back_area a
+{
+  color: #000;
+}
+.browser_back_area span
+{
+  vertical-align: -2px;
+  font-size: 18px;
+}
+.browser_back_area p
+{
+  font-size: 14px;
+}
+
+/* 更新ボタン ====================================================================================== */
+.reloadBtn
+{
+    position: absolute;
+}
+
+.btn
+{
+    /* width: 200px; */
+    height: 30px;
+    min-height: 30px;
+ /* max-height: 30%;  
+    font-size: 24px; */
+}
+.btn-reload
+{
+    background-color: #0069A0!important;
+    width: 55px;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.btn-delete
+{
+    background-color: red!important;
+    width: 55px;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+.btn-worker
+{
+    background-color: green!important;
+    width: 100px;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.9;
+}
+
+
+.btn-reload:hover, .btn-delete:hover, .btn-worker:hover
+{
+    color: #fff;
+    cursor:pointer;
+    opacity: 1;
+}
+
+
+/* selectbox (fillter) ================================================================================ */
+.selectbox-2 
+{
+    position: relative;
+    font-size: 14px;
+}
+
+.selectbox-2::before,
+.selectbox-2::after 
+{
+    position: absolute;
+    top: 30px;
+    content: '';
+    pointer-events: none;
+}
+
+.selectbox-2::before 
+{
+    right: 0;
+    top: 21px;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    border-radius: 0 3px 3px 0;
+    background-color: #579467;
+    content: '';
+}
+
+.selectbox-2::after 
+{
+    position: absolute;
+    top: 65%;
+    right: 1em;
+    transform: translate(50%, -50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    content: '';
+}
+
+/* セレクトボックス */
+.selectbox-2 select 
+{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 200px;                   /* 横幅 */
+    /* height: 2.25em;  */
+    padding: .3em .6em .3em .6em;
+    border: 2px solid #579467;
+    border-radius: 3px;
+    color: #333333;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.selectbox-2 select:focus 
+{
+    outline: 1px solid #579467;
+}
+
+.mb-0
+{
+    margin-bottom: 0;
+}
+
+/* 絞り込みのslect, option */
+.input_area
+{
+    /* display: flex; */
+    margin: 1%;
+    width: 50%;
+}
+
+/* 色イメージ */
+.color_img
+{
+    width: 30px;
+    height: 30px;
+}
+
+/* table ======================================================================================== */
+.tableBase 
+{
+    position: relative;
+}
+/* スクロールバー込みでの */
+.scrollBox 
+{
+    margin: 0 auto;
+    position: relative;
+    max-width: 100%;
+
+    border: 1px solid #333333;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+    margin-top: 10px;
+    font-size: 12px;
+    z-index: 20;
+}
+
+.scrollBox::-webkit-scrollbar 
+{
+    background: #D8E7D6;
+    width: 10px;
+    height: 10px;
+    /* border-radius: 20px; */
+}
+.scrollBox::-webkit-scrollbar-thumb 
+{
+    background-color: #2C5526;
+    /* border-radius: 20px; */
+}
+
+
+
+/* テーブル全体の指定 */
+.tbl 
+{
+    max-width:100%;
+    border-collapse: separate;      /* 下点線 */
+    border-spacing: 0;
+    table-layout: fixed;
+}
+/* 項目、日付のヘッダー */
+.tbl thead 
+{
+    position: sticky;
+    top: 0;
+    z-index:102;
+}
+.tbl th, .tbl td 
+{
+    height: 40px;
+    text-align: top;
+    position: relative;
+
+    /* font-size: var(--font-size, 12pt); */
+}
+.tbl th
+{
+    border-top: 1px solid var(--cell-bg, white)!important;
+    border-left: 1px solid var(--cell-bg, white)!important;
+
+    border-right: 1px solid var(--border-color, silver)!important;
+    border-bottom: 1px solid var(--border-color, silver)!important;
+
+    color: var(--header-fg);
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    border-right-color: var(--header-border-color);
+    border-bottom-color: var(--header-border-color);
+}
+.tbl tr
+{
+    border-bottom: 1px solid var(--border-color, silver)!important;
+}
+
+.noneData
+{
+    color: red;
+    font-size: 14px;
+}
+
+.moveCell
+{
+    border-top: 1px dashed var(--cell-bg, white);
+    /* border-left: 1px dashed var(--cell-bg, white); */
+    border-right: 1px dashed var(--border-color, silver);
+    border-bottom: 1px dashed var(--border-color, silver);
+
+    color: var(--cell-fg, black);
+    background-color: var(--cell-bg, white);
+    text-align:center;
+}
+.fixedCell
+{
+    border-right: 1px solid var(--border-color, silver)!important;
+    border-bottom: 1px solid var(--border-color, silver)!important;
+}
+
+.dateCell
+{
+    max-width: 50px;
+    width:50px;
+    text-align: center;
+}
+
+th.sunday 
+{
+    color: red; /* 日曜日の文字色を赤に */
+    background-color: #ffcccc;
+}
+
+th.saturday 
+{
+    color: blue; /* 土曜日の文字色を青に */
+    background-color: #DDEBF7;
+
+}
+
+th.weekday 
+{
+    color: #000; /* 土曜日の文字色を青に */
+    background-color: #fff;
+}
+
+/* procee（工程）画面での、固定セルの指定 ------------------------------------------------------------- */
+.tbl colgroup col:nth-child(1) {width: 50px;}
+.tbl colgroup col:nth-child(2) {width: 150px;}
+.tbl colgroup col:nth-child(3) {width: 80px;}
+.tbl colgroup col:nth-child(4) {width: 100px;}
+.tbl colgroup col:nth-child(5) {width: 80px;}
+.tbl colgroup col:nth-child(6) {width: 100px;}
+.tbl colgroup col:nth-child(7) {width: 80px;}
+
+/* 自動化だけ、1行多いため */
+.auto_tbl colgroup col:nth-child(8) {width: 80px;}
+
+.tbl th:nth-child(1), .tbl td:nth-child(1) 
+{
+    position: sticky;
+    left: 0px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    text-align:center;
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+}
+.tbl th:nth-child(2), .tbl td:nth-child(2) 
+{
+    /* vertical-align: top; */
+    position: sticky;
+    left: 50px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    text-align:center;
+}
+.tbl th:nth-child(3), .tbl td:nth-child(3) 
+{
+    /* vertical-align: top; */
+    position: sticky;
+    left: 200px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    /* background-color: #000; */
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    text-align:center;
+}
+.tbl th:nth-child(4), .tbl td:nth-child(4) 
+{
+    position: sticky;
+    left: 280px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    text-align:center;
+}
+.tbl th:nth-child(5), .tbl td:nth-child(5) 
+{
+    position: sticky;
+    left: 380px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    text-align:center;
+}
+.tbl th:nth-child(6), .tbl td:nth-child(6) 
+{
+    /* vertical-align: top; */
+    position: sticky;
+    left: 460px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    text-align:center;
+}
+.tbl th:nth-child(7), .tbl td:nth-child(7) 
+{
+    position: sticky;
+    left: 560px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    text-align:center;
+}
+
+/* 自動化だけ、1行多いため */
+.auto_tbl th:nth-child(8), .auto_tbl td:nth-child(8) 
+{
+    position: sticky;
+    left: 640px;
+    z-index: 100;
+    color: var(--header-fg);
+    background-color: var(--header-bg);
+    border-top-color: var(--header-bg);
+    border-left-color: var(--header-bg);
+    text-align:center;
+}
+
+/* auto（自動化）画面での、固定セルの指定 ------------------------------------------------------------- */
+
+/* 列カウント（今は使っていない） ==============================================================*/
+.count-rowid {counter-reset: rowid 0;}
+.count-rowid tr {counter-increment: rowid 1;}
+.count-rowid td:nth-child(1) span.rowid::after {content: counter(rowid); color:gray;}
+
+/* datepicker 表示日付選択部分 ================================================================= */
+/* todayHighlightをfalseにしても.activeクラスがついてしまうので上書き */
+.datepicker table tr td.active:hover, 
+.datepicker table tr td.active:hover:hover, 
+.datepicker table tr td.active.disabled:hover, 
+.datepicker table tr td.active.disabled:hover:hover, 
+.datepicker table tr td.active:active, 
+.datepicker table tr td.active:hover:active, 
+.datepicker table tr td.active.disabled:active, 
+.datepicker table tr td.active.disabled:hover:active, 
+.datepicker table tr td.active.active, 
+.datepicker table tr td.active:hover.active, 
+.datepicker table tr td.active.disabled.active, 
+.datepicker table tr td.active.disabled:hover.active, 
+.datepicker table tr td.active.disabled, 
+.datepicker table tr td.active:hover.disabled, 
+.datepicker table tr td.active.disabled.disabled, 
+.datepicker table tr td.active.disabled:hover.disabled, 
+.datepicker table tr td.active[disabled], 
+.datepicker table tr td.active:hover[disabled], 
+.datepicker table tr td.active.disabled[disabled], 
+.datepicker table tr td.active.disabled:hover[disabled]
+{
+    background-image: none;
+    background-color: white;
+    font-weight: normal;
+    color: black;
+    text-shadow: none;
+}
+
+/* disableの文字色を上書き */
+.datepicker table tr td.active.disabled:hover, 
+.datepicker table tr td.active.disabled:hover:hover, 
+.datepicker table tr td.active.disabled:active, 
+.datepicker table tr td.active.disabled:hover:active,
+.datepicker table tr td.active.disabled.active, 
+.datepicker table tr td.active.disabled:hover.active,
+.datepicker table tr td.active.disabled, 
+.datepicker table tr td.active.disabled.disabled, 
+.datepicker table tr td.active.disabled:hover.disabled, 
+.datepicker table tr td.active[disabled], 
+.datepicker table tr td.active:hover[disabled], 
+.datepicker table tr td.active.disabled[disabled], 
+.datepicker table tr td.active.disabled:hover[disabled]
+{
+    color:#999999;
+    border-radius: 0;
+    background-color: #ddd;
+}
+
+.datepicker td.disabled, .datepicker td.disabled:hover 
+{
+    border-radius: 0;
+    background-color: #ddd;
+}
+
+/* 2024/08/02 16:20　追記 */
+.none
+{
+    display: none;
+}
+
+/* 矢印================================================================================== */
+/* 状態（色）*/
+.today
+{
+    background-color: orange;
+}
+
+.plan 
+{
+    /* background-color: #9AD9E1; */
+    background-color: skyblue;
+
+}
+.start
+{
+    /* background-color: #9ad6a9; */
+    background-color: limegreen;
+}
+.complate
+{
+    /* background-color: #E2F0D9; */
+    /* background-color: #fdcc8a; */
+    background-color: gold!important;
+}
+.late
+{
+    /* background-color: #fb9aa3; */
+    background-color: red;
+}
+
+.safe 
+{
+    background-color: #DEDEDE;
+    /* background-color: #A2A2A2;   */
+}
+
+.bodyArrow
+{
+    width: 100%;
+    height: 90%;
+    font-size: 14px!important;
+    align-items: center;
+    border-top: 1px solid green;
+    border-bottom: 1px solid green;
+}
+.headArrow
+{
+    width: 100%;
+    height: 98%;
+    padding: 3% 0 3% 0;
+    align-items: center;
+    border: none;
+}
+.outerArrow
+{
+    width:100%;
+    height:100%;
+    float: left;
+    
+    background-color: green;
+    clip-path: polygon(0 0, 60% 0, 60% 0%, 100% 50%, 60% 100%, 63% 100%, 0 100%);
+}
+.innerArrow
+{
+    width:95%;
+    height:95%;
+    margin: 2% 2% 2% 0;
+
+    clip-path: polygon(0 0, 60% 0, 60% 0%, 100% 50%, 60% 100%, 63% 100%, 0 100%);
+}
+
+/* 吹き出し================================================================================== */
+.tooltips 
+{
+    padding: 0.5em;
+    color: #000;
+    background: #fff;
+    border: 1px solid green;
+    border-radius: 0.5em;
+    text-align: initial;
+    z-index: 150;
+}
+.tooltips:after
+{
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+/* 通常 */
+.nomal
+{
+    position: absolute;
+    left: 20px;
+    top: 40px;
+}
+.nomal:after
+{
+    position: absolute;
+    left: 10%;
+    top: -8px;
+    border-top:8px solid transparent;
+    border-left:8px solid green;
+}
+
+/* 右側にはみ出し */
+.overRight
+{
+    position: absolute;
+    right: 20px;
+    top: 40px;
+}
+.overRight:after
+{
+    position: absolute;
+    right: 10%;
+    top: -8px;
+    border-top:8px solid transparent;
+    border-right:8px solid green;
+}
+
+/* 下側にはみ出し */
+.overBottom
+{
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+}
+.overBottom:after
+{
+    position: absolute;
+    left: 10%;
+    bottom: -8px;
+    border-bottom:8px solid transparent;
+    border-left:8px solid green;
+}
+
+.overBottomTooltips 
+{
+    position: absolute;
+    left: 20px;
+    bottom: 40px;
+    z-index: 50;
+    padding: 0.5em;
+    color: #000;
+    background: #fff;
+    border: 1px solid green;
+    border-radius: 0.5em;
+    text-align: initial;
+}
+.overBottomTooltips:after
+{
+    width: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0.5em;
+    bottom: -8px;
+    border-bottom:8px solid transparent;
+    border-left:8px solid green;
+}
+
+/* 右＆下側にはみ出し */
+.overAll
+{
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+}
+.overAll::after
+{
+    position: absolute;
+    right: 10%;
+    bottom: -8px;
+    border-bottom:8px solid transparent;
+    border-right:8px solid green;
+}
+
+
+/* モーダルの実装 */  
+/* モーダルウィンドウの基本スタイル */
+.modal 
+{
+    display: none; /* デフォルトでは非表示に設定 */
+    position: fixed; /* モーダルがページ全体に固定されるように設定 */
+    top: 0; /* ページの最上部からスタート */
+    left: 0; /* ページの最左端からスタート */
+    width: 100%; /* モーダルが画面全体の幅を占める */
+    height: 100%; /* モーダルが画面全体の高さを占める */
+    background-color: rgba(0, 0, 0, 0.4); /* 背景を半透明の黒に設定（モーダルの背後が見えるように） */
+}
+
+/* モーダルの中身 */
+.modal-content 
+{
+    position: fixed; /* モーダル内容が画面上に固定されるように設定 */
+    font-size: 18px;;
+    top: 50%; /* 縦方向の中央に配置 */
+    left: 50%; /* 横方向の中央に配置 */
+    transform: translate(-50%, -50%); /* 完全に中央に配置するための補正 */
+    padding: 20px; /* モーダル内の余白を設定 */
+    width: 400px; /* モーダルの幅 */
+    height: 100px; /* モーダルの高さ */
+    background-color: #fefefe; /* モーダルの背景色を白に設定 */
+    border: 1px solid #888; /* 境界線の色を薄いグレーに設定 */
+    border-radius: 10px; /* モーダルの角を丸くするための半径 */
+}
+
+/* モーダルを閉じるボタン（×）のスタイル（モーダルを出すだけなので表示さえない） */
+#closeModal 
+{
+    position: absolute; /* モーダル内で絶対位置に配置 */
+    display: flex; /* ボタン内のテキストが中央に配置されるようにフレックスボックスを使用 */
+    align-items: center; /* ボタン内のテキストを縦方向に中央揃え */
+    justify-content: center; /* ボタン内のテキストを横方向に中央揃え */
+    top: -30%; /* モーダル内容の上部から離れた位置に配置 */
+    right: -10%; /* モーダル内容の右端から離れた位置に配置 */
+    font-size: 28px; /* 閉じるボタンのフォントサイズ */
+    font-weight: bold; /* 閉じるボタンのフォントを太字に設定 */
+    cursor: pointer; /* ホバー時にポインタが表示されるように設定 */
+    color: #FFF; /* 閉じるボタンのテキストカラーを白に設定 */
+    width: 40px; /* ボタンの幅 */
+    height: 40px; /* ボタンの高さ */
+    background-color: #333; /* ボタンの背景色をダークグレーに設定 */
+    border: #333; /* ボタンの境界線を背景と同じ色に設定 */
+    border-radius: 50%; /* ボタンを丸くするための半径 */
+}
+
+
+  

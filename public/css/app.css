@@ -1,0 +1,191 @@
+body
+{
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #212529;
+  text-align: left;
+  background-color: #f8fafc;
+}
+
+.container,
+.container-fluid,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm 
+{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-light .navbar-brand 
+{
+    color: white;
+}
+
+.nav_back
+{
+  background-color: #579467;
+
+  /* 何故か角丸が入っている為打消し */
+  border-radius: 0%!important;
+}
+
+.navbar-brand 
+{
+  display: inline-block;
+  
+  /* scssでの指定を打消し */
+  padding: 15px!important;
+  margin-right: 0rem!important;
+
+  font-size: 18px!important;
+  color: #fff!important;
+
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+table
+{
+    width:100%;
+    white-space:nowrap;
+    border-collapse:separate;
+    border-spacing: 0;
+    border-bottom: 1px #000 solid;
+    border-right: 1px #000 solid;
+}
+
+thead
+{
+    display:table-header-group;
+    unicode-bidi: isolate;
+}
+
+.sticky_table thead th 
+{
+    /* 縦スクロール時に固定する */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    /* tbody内のセルより手前に表示する */
+    z-index: 1;
+}
+
+.sticky_table th:first-child 
+{
+    /* 横スクロール時に固定する */
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+}
+
+.sticky_table thead th:first-child 
+{
+    /* ヘッダー行内の他のセルより手前に表示する */
+    z-index: 2;
+}
+
+.pt-4,
+.py-4
+{ 
+  padding-top: 1.5rem !important;
+}
+
+/* auto.css */
+/* stic */
+/* 始めの列固定 */
+.sticky_row {
+    position: sticky;
+    background: #000;
+    left: 0;
+    border-left: none;
+    border-right: none;
+  }
+  
+  /* 途中からの列固定 */
+  .sticky_from{
+    position: sticky;
+    color: #fff;
+    background: #000;
+    left: 100px;
+    border-left: none;
+    border-right: none;
+  }
+    
+  /* 固定セルの線 */
+  .sticky_row::before,
+  .sticky_from::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    /* background: #ccc; */
+    background: #fff;
+    z-index: -1;
+  }
+  .sticky_from::before{
+    left: -1px;
+    /* background: #666; */
+  }
+  .sticky_col {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: none;
+    border-top: none;
+    border-bottom: none;
+  }
+  .sticky_col::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    background: #ccc;
+    z-index: -1;
+  }
+  .sticky_cross {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background: none;
+    border-top: none;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    z-index: 1000;
+  }
+  .sticky_cross::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    background: #ccc;
+    z-index: -1;
+  }

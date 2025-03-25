@@ -1,0 +1,95 @@
+/* 戻るボタン（bootstrap導入後） ======================================================================================== */
+.back_btn {
+    width: 20%;
+    margin-left: 1%;
+    vertical-align: middle;
+    color: #000;
+}
+
+.browser_back_area a
+{
+  color: #000;
+}
+.browser_back_area span
+{
+  vertical-align: -2px;
+  font-size: 18px;
+}
+.browser_back_area p
+{
+  font-size: 14px;
+}
+
+.box
+{
+    width: 50%;
+    margin: 5% auto;
+    padding: 2%;
+    background-color: #9BD3B4;
+    border-radius: 25px;
+}
+
+.subBox
+{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.error
+{
+    color: red;
+    font-size: 16px;
+}
+
+.btn-delete
+{
+  background-color: red!important;
+  /* font-size: 14px; */
+  font-size: 25px;
+  color: #fff;
+  opacity: 0.9;
+  /* margin: 20px auto; */
+}
+
+.confirm
+{
+    border: #000 solid 1px;
+    border-radius: 5%;
+    margin: 5% auto;
+    padding: 3%;
+
+    width: 50%;
+
+    border-radius: 25px;
+}
+
+.confirm_item
+{
+  width: 35%;
+  font-size: 20px;
+}
+
+.confirm_contents_title
+{
+  font-size: 20px;
+  width: 35%;
+}
+
+.flex
+{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2px;
+}
+
+.confirm_update_btn, .confirm_add_btn
+{
+  width: 100%;
+  margin-top: 20px;
+}
+
+h1, p
+{
+  margin-bottom: 5%;
+}
+
