@@ -104,7 +104,7 @@
                     </label>
                 </div>
 
-             
+                {{-- 矢印の種類説明部分 --}}
                 <div class="col-md-5 d-flex align-items-center">
                     <span class="d-flex align-items-center">
                         <img class="color_img mx-2" src=" ../img/plan.png" alt="予定日">予定日
