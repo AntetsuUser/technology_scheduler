@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head> --}}
+{{-- テスト --}}
 
 @extends('layouts.app')
 @section('title', '生産管理スケジューラー')
