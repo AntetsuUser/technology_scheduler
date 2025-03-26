@@ -83,7 +83,7 @@ class ScheduleController extends Controller
 
         // bladeに送るために、データを格納する配列
         $jsonData = [];
-       
+
         // 中身を取り出す。
         foreach ($ExcelInfo_all as $excelInfo)
         {
@@ -94,7 +94,7 @@ class ScheduleController extends Controller
             $fileName = $excelInfo->file_name;
             $sheetName = $excelInfo->sheet_name;
             $complateState = $excelInfo->complate_state;
- 
+            
             // excelInfo_idを使って、対応したProcessInfoとProcessTaskDetails内のdataを取得
             $ProcessInfo_data = $this->_processInfoService->process_info_find_by_id($excelInfo_id);
             $ProcessTaskDetails_data = $this->_processTaskDetailsService->process_task_datails_find_by_id($excelInfo_id);
@@ -154,7 +154,7 @@ class ScheduleController extends Controller
                 ];
             }
         }
-       
+        
         // DBから取得すると順番がバラバラになる為、ソートして並び替える ------------------------------------------------------------
         foreach ($jsonData as $fileName => &$sheets) 
         {
@@ -167,7 +167,7 @@ class ScheduleController extends Controller
         // 表示させたい jsonData（jsでの判定で使う）, どの処理か判定の action（この場合は process, その他データの params） 
         return view('schedule.process', compact('params','jsonData', 'get_workers', 'action'));
     }
-   
+
     // 削除確認画面 ==============================================================================================================
     function process_comfirm(SessionRequest $request)
     {
@@ -232,10 +232,10 @@ class ScheduleController extends Controller
         // // itemからの取得（hidden）
         $action = $request->action;
         $params = $request->only(['start_date', 'end_date']);
-        $params = [
-            'start_date' => '2025/3/1',
-            'end_date' => '2025/4/31'
-        ];
+        // $params = [
+        //     'start_date' => '2025/3/1',
+        //     'end_date' => '2025/4/31'
+        // ];
     
         $now = Carbon::now(); // 時間設定（asia Tokyo）
 
@@ -251,7 +251,7 @@ class ScheduleController extends Controller
         // bladeに送るために、データを格納する配列
         $jsonData = [];
         $workerData = [];
-       
+
         // 中身を取り出す。
         foreach ($ExcelInfo_all as $excelInfo)
         {
@@ -262,7 +262,7 @@ class ScheduleController extends Controller
             $fileName = $excelInfo->file_name;
             $sheetName = $excelInfo->sheet_name;
             $complateState = $excelInfo->complate_state;
- 
+            
             // excelInfo_idを使って、対応したProcessInfoとProcessTaskDetails内のdataを取得
             $ProcessInfo_data = $this->_processInfoService->process_info_find_by_id($excelInfo_id);
             $ProcessTaskDetails_data = $this->_processTaskDetailsService->process_task_datails_find_by_id($excelInfo_id);
@@ -322,7 +322,7 @@ class ScheduleController extends Controller
                 ];
             }
         }
-       
+        
         // DBから取得すると順番がバラバラになる為、ソートして並び替える ------------------------------------------------------------
         foreach ($jsonData as $fileName => &$sheets) 
         {
