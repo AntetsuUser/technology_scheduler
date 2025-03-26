@@ -19,3 +19,5 @@ yarn-error.log
 /.vscode
 /scheduler/technology_scheduler/process.json
 /scheduler/technology_scheduler/auto.json
+process.json
+auto.json
