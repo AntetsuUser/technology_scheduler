@@ -235,8 +235,7 @@
                                             {!! $formattedDate !!}
                                         </td>
                                     @else
-                                        <td class="invisibleCell td_item" name="{!! $row['RB納期'] !!}"></td>
-                                        {!! $formattedDate !!}
+                                        <td class="invisibleCell td_item" name="{!! $row['RB納期'] !!}">{!! $formattedDate !!}</td>
                                     @endif
 
                                     <td class="fixedCell td_item" name="{{ $row['担当者'][$i] ?? '' }}">{{ $row['担当者'][$i] ?? '' }}</td>
