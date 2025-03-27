@@ -224,15 +224,19 @@
 
                                     {{-- <td class="fixedCell td_item" name="{{ $row['設備No'][$i] ?? '' }}">{{ $row['設備No'][$i] ?? '' }}</td> --}}
 
+                                    {{-- RB納期の表示形式を合わせるために先に変えておく --}}
+                                    @php
+                                        $dateString = str_replace(['年', '月', '日'], ['-', '-', ''], $row['RB納期']);
+                                        $formattedDate = \Carbon\Carbon::createFromFormat('Y-m-d', $dateString)->format('Y年n月');
+                                    @endphp
+
                                     @if ($i == 0)
-                                        {{-- セルの大きさが合わなくなるので、年で改行を入れる --}}
-                                        <td class="fixedCell td_item" rowspan="{{ $maxRows }}" name={{ $row['RB納期'] }}>
-                                            {!! str_replace('年', "年<br>", e($row['RB納期'])) !!}
-                                            {{-- {!!  \Carbon\Carbon::parse($row['RB納期'])->format('Y年n月j日') !!} --}}
+                                        <td class="fixedCell td_item" rowspan="{{ $maxRows }}" name="{{ $row['RB納期'] }}">
+                                            {!! $formattedDate !!}
                                         </td>
                                     @else
-                                        <td class="invisibleCell td_item" name="{{ $row['RB納期'] }}"></td>
-                                        {{-- <td class="invisibleCell td_item" name="{{ $year . $month_day }}"></td> --}}
+                                        <td class="invisibleCell td_item" name="{!! $row['RB納期'] !!}"></td>
+                                        {!! $formattedDate !!}
                                     @endif
 
                                     <td class="fixedCell td_item" name="{{ $row['担当者'][$i] ?? '' }}">{{ $row['担当者'][$i] ?? '' }}</td>
