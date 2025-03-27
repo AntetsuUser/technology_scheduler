@@ -425,7 +425,7 @@ $(function()
 
             createCol.append('<col />');
             headerRow.append(`<th class="${thClass}" name="${date.fullDate}">${date.shortDate}</th>`);
-            percentRow.append(`<th class="dateCell" name="">aa</th>`);
+            percentRow.append(`<th class="dateCell" name=""></th>`);
         });
 
         // 入力された範囲内に今日の日付があるか
