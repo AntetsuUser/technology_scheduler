@@ -231,8 +231,8 @@
                                             {{-- {!!  \Carbon\Carbon::parse($row['RB納期'])->format('Y年n月j日') !!} --}}
                                         </td>
                                     @else
-                                        {{-- <td class="invisibleCell td_item" name="{{ $row['RB納期'] }}"></td> --}}
-                                        <td class="invisibleCell td_item" name="{{ $year . $month_day }}"></td>
+                                        <td class="invisibleCell td_item" name="{{ $row['RB納期'] }}"></td>
+                                        {{-- <td class="invisibleCell td_item" name="{{ $year . $month_day }}"></td> --}}
                                     @endif
 
                                     <td class="fixedCell td_item" name="{{ $row['担当者'][$i] ?? '' }}">{{ $row['担当者'][$i] ?? '' }}</td>
