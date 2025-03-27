@@ -203,7 +203,7 @@
                                             {!! nl2br(e($row['品番'])) !!}
                                         </td>
                                     @else
-                                        <td class="invisibleCell td_item" name="{{ $row['品番'] }}"></td>
+                                        <td class="invisibleCell td_item" name="{{ $row['品番'] }}">{!! nl2br(e($row['品番'])) !!}</td>
                                     @endif
 
                                     <td class="fixedCell td_item" name="{{ $row['担当者'][$i] ?? '' }}">{{ $row['担当者'][$i] ?? '' }}</td>
