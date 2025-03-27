@@ -199,7 +199,9 @@
                                     <td class="fixedCell td_item" name="{{ $row['設備番号'][$i] ?? '' }}">{{ $row['設備番号'][$i] ?? '' }}</td>
 
                                     @if ($i == 0)
-                                        <td class="fixedCell td_item" rowspan="{{ $maxRows }}" name="{{ $row['品番'] }}">{{ $row['品番'] }}</td>
+                                        <td class="fixedCell td_item" rowspan="{{ $maxRows }}" name="{{ $row['品番'] }}">
+                                            {!! nl2br(e($row['品番'])) !!}
+                                        </td>
                                     @else
                                         <td class="invisibleCell td_item" name="{{ $row['品番'] }}"></td>
                                     @endif
